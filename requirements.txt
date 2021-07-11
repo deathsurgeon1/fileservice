@@ -7,3 +7,4 @@ Jinja2==3.0.1
 MarkupSafe==2.0.1
 six==1.16.0
 Werkzeug==2.0.1
+gunicorn==19.9.0
