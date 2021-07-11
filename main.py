@@ -13,6 +13,11 @@ app.config['UPLOAD_FOLDER'] = UPLOADS
 def run():
     return render_template("home.html")
 
+@app.route("/")
+@cross_origin()
+def run1():
+    return render_template("home.html")
+
 
 @app.route("/home/receive", methods=['GET', 'POST'])
 @cross_origin()
