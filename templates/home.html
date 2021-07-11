@@ -27,11 +27,20 @@ Please specify a file, or a set of files:<br>
         var formData = new FormData(document.getElementById('upload'));
         xhr.onreadystatechange = function () {
           if(xhr.readyState === XMLHttpRequest.DONE && xhr.status==200) {
+          var blob = new Blob([xhr.responseText], { type: "application/text" });
            document.getElementById("data").innerHTML = xhr.responseText;
+           a = document.createElement('a');
+        a.href = window.URL.createObjectURL(blob);
+        // Give filename you wish to download
+        a.download = "test-file.txt";
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
           }
         };
         //formData.append("file", file);
         xhr.open('POST', url);
+        xhr.responseType='text'
         //xhr.setRequestHeader("Content-Type","multipart/form-data");
         xhr.send(formData);
     }
