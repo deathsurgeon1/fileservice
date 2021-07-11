@@ -39,3 +39,7 @@ def receive():
         f.close()
         return filecontent
     return "fail"
+
+
+if __name__ == "__main__":
+    app.run()
